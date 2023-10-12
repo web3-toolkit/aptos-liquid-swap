@@ -1,0 +1,12 @@
+node_modules
+.idea
+*.iml
+build
+npm-debug.log
+.nyc
+.env
+.DS_Store
+resource/config/*/wallets.txt
+resource/config/*/.properties
+resource/log/*
+*.env

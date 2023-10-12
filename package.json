@@ -1,0 +1,29 @@
+{
+  "name": "aptos-liquid-swap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "npx nodemon",
+    "build": "rimraf ./dist && tsc",
+    "prestart": "npm run build",
+    "aptos": "npm run prestart && node dist/aptos/main.js"
+  },
+  "devDependencies": {
+    "@types/node": "20.4.1",
+    "@types/properties-reader": "2.1.1",
+    "rimraf": "5.0.1",
+    "ts-node": "10.9.1",
+    "typescript": "5.1.6"
+  },
+  "dependencies": {
+    "@pontem/liquidswap-sdk": "0.6.1",
+    "aptos": "1.19.0",
+    "axios": "1.5.0",
+    "csv-writer": "1.6.0",
+    "properties-reader": "2.3.0",
+    "tslib": "2.6.2",
+    "winston": "3.10.0"
+  },
+  "type": "module"
+}
