@@ -56,3 +56,7 @@ npm install
 ```
 npm run aptos
 ```
+
+**Обсудить / вопросы / пожелания**
+
+https://t.me/web3_toolkit
