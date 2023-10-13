@@ -22,6 +22,9 @@ export async function sleepSeconds(seconds: number) {
 }
 
 export function readLines(filePath: string): string[] {
+  if (!fs.existsSync(filePath)) {
+    return [];
+  }
   const file = fs.readFileSync(filePath, 'utf-8');
   return file.split(/\r?\n/);
 }

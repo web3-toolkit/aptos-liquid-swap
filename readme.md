@@ -20,7 +20,7 @@
 * `MAX_DELAY_BETWEEN_SWAPS_SECONDS` - максимальная задержка между свапами
 * `MIN_REGISTER_TOKEN_DELAY_SECONDS` - минимальная задержка между апрувом токена
 * `MAX_REGISTER_TOKEN_DELAY_SECONDS` - максимальная задержка между апрувом токена
-* `MIN_SWAPS_PER_ACCOUNT` - миинмальное колличество свапов на кошелек
+* `MIN_SWAPS_PER_ACCOUNT` - минимальное колличество свапов на кошелек
 * `MAX_SWAPS_PER_ACCOUNT` - максимальное колличество свапов на кошелек
 
 
