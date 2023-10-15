@@ -22,6 +22,7 @@ import {TxLog, TxLogEntry} from "../common/txLog.js";
 import {CurveType} from "@pontem/liquidswap-sdk/dist/tsc/types/aptos";
 import {APSCAN, APTOS_COIN_CONTRACT, APTOS_DECIMALS, PONTEM_SWAP_ADDRESS} from "./constant.js";
 import PropertiesReader from "properties-reader"
+import https from "https";
 
 const {
   EntryFunction,
@@ -349,7 +350,12 @@ async function getWalletCoin(walletAddress: string, coinContractAddress: string)
 async function getWalletCoins(walletAddress: string): Promise<CoinData[]> {
   let addressWithoutTrailingZero = walletAddress.replace('0x0', '0x');
   const requestUrl = `${APSCAN}/accounts?address=eq.${addressWithoutTrailingZero}`;
-  const response = await AXIOS_INSTANCE.get(requestUrl);
+  let requestConfig = {
+    httpsAgent: new https.Agent({
+      rejectUnauthorized: false
+    })
+  };
+  const response = await AXIOS_INSTANCE.get(requestUrl, requestConfig);
   const balancesResponse = response.data[0]["all_balances"];
   if (balancesResponse === undefined) {
     LOGGER.error(`Bad response from ${requestUrl}. Response ${response.data}`);
