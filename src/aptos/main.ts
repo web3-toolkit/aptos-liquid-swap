@@ -125,8 +125,10 @@ function createWalletAddressesSwapSequence(walletsMap: Map<string, AptosAccount>
 
 function getWalletsMap(filePath: string): Map<string, AptosAccount> {
   const wallets = new Map<string, AptosAccount>();
-  for (const sid of readLines(filePath)) {
-    const wallet = AptosAccount.fromDerivePath("m/44'/637'/0'/0'/0'", sid);
+  for (const sidOrKey of readLines(filePath)) {
+      const wallet = sidOrKey.split(" ").length > 1
+          ? AptosAccount.fromDerivePath("m/44'/637'/0'/0'/0'", sidOrKey)
+          : new AptosAccount(HexString.ensure(sidOrKey).toUint8Array());
     wallets.set(wallet.address().toString(), wallet);
   }
   return wallets;

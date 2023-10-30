@@ -10,7 +10,7 @@
 
 Пример конфиг файла - `aptos-liquid-swap/resource/config/aptos/.properties.example`.
 Копируем `aptos-liquid-swap/resource/config/aptos/.properties` и вставляем свои значения:
-* `SID_PHRASES_FILE` - полный путь к файлу с сид фразами. Формат: каждая новая строка - новая фраза.
+* `SID_PHRASES_FILE` - полный путь к файлу с сид фразами или приватниками. Формат: каждая новая строка - новая фраза / приватник.
 
 [Опционально] Файл с адресами которые будем использовать -
 `aptos-liquid-swap/resource/config/aptos/wallets.txt`.
